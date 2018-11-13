@@ -25,7 +25,7 @@
 import os
 import sys
 from spack import *
-from spack.operating_systems.mac_os import macOS_version
+from spack.operating_systems.mac_os import macos_version
 
 class Neuron(Package):
 
@@ -81,7 +81,7 @@ class Neuron(Package):
             filter_file(r'TABLE minf', r':TABLE minf', "src/nrnoc/hh.mod")
 
         # python header path changed on highsierra
-        if sys.platform == 'darwin' and macOS_version() >= Version('10.13'):
+        if sys.platform == 'darwin' and macos_version() >= Version('10.13'):
             files = ['src/nrnpython/grids.c',
                      'src/nrnpython/grids.h',
                      'src/nrnpython/rxd.c',
